@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind</title>
+</head>
+<body>
+    <button id="btnBleu" value="bleu">Bleu</button>
+    <button id="btnRouge" value="rouge">Rouge</button>
+    <button id="btnVert" value="vert">Vert</button>
+    <button id="btnViolet" value="violet">Violet</button>
+    <input type="text" id="input">
+</body>
+<script>
+    const btnBleu = document.getElementById("btnBleu")
+    const btnRouge = document.getElementById("btnRou")
+    const btnVert = document.getElementById("btnVert")
+    const btnViolet = document.getElementById("btnViolet")
+
+    btnBleu.addEventListener("click", () =>{
+        console.log(btnBleu.value)
+    })
+
+    btnRouge.addEventListener("click", () =>{
+        console.log(btnRouge.value)
+    })
+
+    btnVert.addEventListener("click", () =>{
+        console.log(btnVert.value)
+    })
+
+    btnViolet.addEventListener("click", () =>{
+        console.log(btnViolet.value)
+    })
+
+    
+</script>
+</html>
