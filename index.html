@@ -15,18 +15,18 @@
 </body>
 <script>
     const buttons = [
-  {id: "btnBleu", value: "blue"},
-  {id: "btnRouge", value: "red"},
-  {id: "btnVert", value: "green"},
-  {id: "btnViolet", value: "violet"}
-];
+        {id: "btnBleu", value: "blue"},
+        {id: "btnRouge", value: "red"},
+        {id: "btnVert", value: "green"},
+        {id: "btnViolet", value: "violet"}
+    ];
 
-buttons.forEach(btn => {
-  const button = document.getElementById(btn.id);
-  button.addEventListener("click", () => {
-    console.log(btn.value);
-  });
-});
+    buttons.forEach(btn => {
+        const button = document.getElementById(btn.id);
+        button.addEventListener("click", () => {
+            console.log(btn.value);
+        });
+    });
 
     
 </script>
