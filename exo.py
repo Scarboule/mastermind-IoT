@@ -10,6 +10,8 @@ password= 'scarboule'
 wlan.connect(ssid, password)
 url= "http://192.168.43.151:3000/"
 
+led1 = Pin(17, mode=Pin.OUT)
+
 while not wlan.isconnected():
     time.sleep(1)
     print("noco")
@@ -21,7 +23,7 @@ while(True):
         print(result)
         for i in range(len(result['chosencolor'])):
             if result['chosencolor'][i] == result['resultcolor'][i]:
-                
+                led1.on()
                 print("gg")
         r.close()
         time.sleep(1)
