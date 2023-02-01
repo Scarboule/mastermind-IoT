@@ -2,6 +2,7 @@ import network
 import urequests
 import time
 import ujson
+from machine import Pin
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
