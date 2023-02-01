@@ -14,26 +14,19 @@
     <input type="text" id="input">
 </body>
 <script>
-    const btnBleu = document.getElementById("btnBleu")
-    const btnRouge = document.getElementById("btnRou")
-    const btnVert = document.getElementById("btnVert")
-    const btnViolet = document.getElementById("btnViolet")
+    const buttons = [
+  {id: "btnBleu", value: "blue"},
+  {id: "btnRouge", value: "red"},
+  {id: "btnVert", value: "green"},
+  {id: "btnViolet", value: "violet"}
+];
 
-    btnBleu.addEventListener("click", () =>{
-        console.log(btnBleu.value)
-    })
-
-    btnRouge.addEventListener("click", () =>{
-        console.log(btnRouge.value)
-    })
-
-    btnVert.addEventListener("click", () =>{
-        console.log(btnVert.value)
-    })
-
-    btnViolet.addEventListener("click", () =>{
-        console.log(btnViolet.value)
-    })
+buttons.forEach(btn => {
+  const button = document.getElementById(btn.id);
+  button.addEventListener("click", () => {
+    console.log(btn.value);
+  });
+});
 
     
 </script>
