@@ -13,8 +13,7 @@ url= "http://192.168.43.151:3000/"
 
 
 all_led = [Pin(17, mode=Pin.OUT),Pin(18, mode=Pin.OUT),Pin(20, mode=Pin.OUT),Pin(22, mode=Pin.OUT)]
-for i in range (len(all_led)):
-    all_led[i].off()
+
 
 while not wlan.isconnected():
     time.sleep(1)
@@ -22,6 +21,8 @@ while not wlan.isconnected():
 
 while(True):
     try:
+        for i in range(len(all_led)):
+            all_led[i].off()
         r = urequests.get(url)
         result = r.json()
         print(result)
@@ -30,6 +31,6 @@ while(True):
                 all_led[i].on()
             
         r.close()
-        time.sleep(1)
+        time.sleep(5)
     except Exception as e:
         print(e)

@@ -11,7 +11,7 @@ app.use(cors())
 
 const color = ["red","blue","green","purple"]
 const chosencolor = ["purple","red","blue","blue"]
-const resultcolor = [color[2],color[0],color[1],color[1]]
+let resultcolor = [color[0],color[0],color[1],color[1]]
 
 app.get('/',(req, res) => {
     res.send({"chosencolor":chosencolor,"resultcolor":resultcolor})
@@ -19,3 +19,11 @@ app.get('/',(req, res) => {
 server.listen(3000, () => {
     console.log("F.D.plume")
 })
+
+function Newcode(){
+    resultcolor = []
+    for (let x = 0; x < 4; x++){
+        resultcolor.push(color[Math.floor(Math.random() * color.length)]) 
+    }
+}
+Newcode()
