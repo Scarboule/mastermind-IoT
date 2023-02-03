@@ -9,7 +9,7 @@ wlan.active(True)
 ssid = 'Sacha la tepu'
 password= 'scarboule'
 wlan.connect(ssid, password)
-url= "http://192.168.43.151:3000/"
+url= "http://192.168.43.109:3000/"
 
 
 all_led = [Pin(17, mode=Pin.OUT),Pin(18, mode=Pin.OUT),Pin(20, mode=Pin.OUT),Pin(22, mode=Pin.OUT)]

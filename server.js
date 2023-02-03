@@ -9,8 +9,8 @@ console.log(ip.address())
 app.use(express.json())
 app.use(cors())
 
-const color = ["red","blue","green","purple"]
-const chosencolor = ["purple","red","blue","blue"]
+const color = ["red","blue","green","yellow"]
+const chosencolor = ["yellow","red","blue","blue"]
 let resultcolor = [color[0],color[0],color[1],color[1]]
 
 app.get('/',(req, res) => {
