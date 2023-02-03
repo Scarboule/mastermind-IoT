@@ -44,7 +44,7 @@ def selecColors():
                 choosen_color.append(x)
                 print(choosen_color)
             x += 1
-        time.sleep(0.15)
+        time.sleep(0.1)
     r = urequests.post('http://192.168.43.109:3000/choosecolor', json = 
     {
         'color1' : choosen_color[0],
@@ -64,13 +64,30 @@ def resetcolor():
     r = urequests.post('http://192.168.43.109:3000/resetchoosecolor')
     r.close()
 
+def won() :
+    print("gagné")
+    r = urequests.get(url)
+    result = r.json()
+    print(result['chosencolor'])
+    print(result['resultcolor'])
+    while result['chosencolor'] == result['resultcolor']:
+        
+        for i in range(len(all_led)):
+            if btn_reset.value() == 0:
+                r.close
+                r = urequests.get('http://192.168.43.109:3000/reset')
+                print(r.json())
+                r.close()
+                print("reset")
+                break
+            all_led[i].toggle()
+            time.sleep(0.131456)
+        
+
 
 while True:
     selecColors()
     choosen_color = []
-
-    
-
     try:
         for i in range(len(all_led)):
             all_led[i].off()
@@ -83,9 +100,8 @@ while True:
                 all_led[i].on()
             
         r.close()
-        resetcolor()
         time.sleep(2)
+        won()
+        resetcolor()
     except Exception as e:
         print(e)
-
-
