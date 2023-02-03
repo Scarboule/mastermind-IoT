@@ -3,6 +3,7 @@ import urequests
 import time
 import ujson
 from machine import Pin
+import _thread
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
@@ -13,6 +14,7 @@ url= "http://192.168.43.109:3000/"
 
 
 all_led = [Pin(17, mode=Pin.OUT),Pin(18, mode=Pin.OUT),Pin(20, mode=Pin.OUT),Pin(22, mode=Pin.OUT)]
+btn = Pin(15, mode=Pin.IN, pull=Pin.PULL_UP)
 
 
 while not wlan.isconnected():
@@ -20,6 +22,13 @@ while not wlan.isconnected():
     print("noco")
 
 while(True):
+    print(url + "reset/")
+    print(btn.value())
+    if btn.value() == 1:
+        r = urequests.get(url + "reset")
+        result = r.json()
+        print(result)
+    time.sleep(0.1)
     try:
         for i in range(len(all_led)):
             all_led[i].off()
@@ -31,6 +40,6 @@ while(True):
                 all_led[i].on()
             
         r.close()
-        time.sleep(5)
+        time.sleep(0.5)
     except Exception as e:
         print(e)
