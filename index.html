@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind</title>
+</head>
+<body>
+    <button id="btnBleu" value="bleu">Bleu</button>
+    <button id="btnRouge" value="rouge">Rouge</button>
+    <button id="btnVert" value="vert">Vert</button>
+    <button id="btnViolet" value="violet">Violet</button>
+    <input type="text" id="input">
+</body>
+<script>
+    const buttons = [
+        {id: "btnBleu", value: "blue"},
+        {id: "btnRouge", value: "red"},
+        {id: "btnVert", value: "green"},
+        {id: "btnViolet", value: "violet"}
+    ];
+
+    buttons.forEach(btn => {
+        const button = document.getElementById(btn.id);
+        button.addEventListener("click", () => {
+            console.log(btn.value);
+        });
+    });
+
+    
+</script>
+</html>
